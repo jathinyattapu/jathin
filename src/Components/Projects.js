@@ -3,18 +3,18 @@ import './Project.css';
 const Projects = () => {
     const projects = [
       {
-        title: "E-Commerce Platform",
+        title: "Production Planning",
         description: "A full-stack e-commerce platform built with .NET Core and React.",
         technologies: [".NET Core", "React", "SQL Server"],
         demo: "https://example.com",
-        github: "https://github.com/example",
+        github: "https://github.com/jathinyattapu",
       },
       {
-        title: "Task Management App",
-        description: "A MERN stack application for managing tasks and projects.",
+        title: "PG Management",
+        description: "A MERN stack application for managing Paying Guests Management Software.",
         technologies: ["MongoDB", "Express", "React", "Node.js"],
         demo: "https://example.com",
-        github: "https://github.com/example",
+        github: "https://github.com/jathinyattapu",
       },
     ];
   

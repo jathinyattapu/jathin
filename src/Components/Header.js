@@ -6,20 +6,28 @@ import {
   faBriefcase,
   faProjectDiagram,
   faEnvelope,
+  faGraduationCap,
+  faBook,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
 
+const menuItems = [
+  { id: "home", icon: faHome, text: "Home" },
+  { id: "about", icon: faUser, text: "About" },
+  { id: "experience", icon: faBriefcase, text: "Experience" },
+  { id: "education", icon: faGraduationCap, text: "Education" },
+  { id: "skills", icon: faBook, text: "Skills" },
+  { id: "projects", icon: faProjectDiagram, text: "Projects" },
+  { id: "contact", icon: faEnvelope, text: "Contact" },
+];
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState(null);
 
-  // Add scroll event listener
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -27,28 +35,25 @@ const Header = () => {
   }, []);
 
   return (
-    <>
-      {/* Hidden Menu with Icons */}
-      <div className={`hidden-menu ${isScrolled ? "visible" : ""}`}>
-        <nav>
-          <a href="#home">
-            <FontAwesomeIcon icon={faHome} />
-          </a>
-          <a href="#about">
-            <FontAwesomeIcon icon={faUser} />
-          </a>
-          <a href="#experience">
-            <FontAwesomeIcon icon={faBriefcase} />
-          </a>
-          <a href="#projects">
-            <FontAwesomeIcon icon={faProjectDiagram} />
-          </a>
-          <a href="#contact">
-            <FontAwesomeIcon icon={faEnvelope} />
-          </a>
-        </nav>
-      </div>
-    </>
+    <div className={`hidden-menu ${isScrolled ? "visible" : ""}`}>
+      <nav>
+        {menuItems.map((item) => (
+          <div
+            key={item.id}
+            className="menu-item"
+            onMouseEnter={() => setHoveredItem(item.id)}
+            onMouseLeave={() => setHoveredItem(null)}
+          >
+            <a href={`#${item.id}`}>
+              <FontAwesomeIcon icon={item.icon} />
+            </a>
+            {hoveredItem === item.id && (
+              <span className="tooltip">{item.text}</span>
+            )}
+          </div>
+        ))}
+      </nav>
+    </div>
   );
 };
 

@@ -1,34 +1,60 @@
 .hidden-menu {
-    position: fixed;
-    top: 50%;
-    left: -60px; /* Start off-screen */
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.1); /* Glassy background */
-    backdrop-filter: blur(10px); /* Blur effect */
-    border-radius: 0 10px 10px 0;
-    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    transition: left 0.3s ease;
-  }
-  
-  .hidden-menu.visible {
-    left: 0; /* Slide into view */
-  }
-  
-  .hidden-menu nav {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 15px 10px;
-  }
-  
-  .hidden-menu nav a {
-    color: var(--dark-text-color);
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-  }
-  
-  .hidden-menu nav a:hover {
-    color: var(--primary-color);
-  }
+  position: fixed;
+  top: 50%;
+  left: -60px;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 0 10px 10px 0;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: left 0.3s ease;
+}
+
+.hidden-menu.visible {
+  left: 0;
+}
+
+.hidden-menu nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 15px 10px;
+}
+
+.menu-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hidden-menu nav a {
+  color: var(--dark-text-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.hidden-menu nav a:hover {
+  color: var(--primary-color);
+}
+
+/* Tooltip styling */
+.tooltip {
+  position: absolute;
+  left: 50px;
+  background: var(--primary-color);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu-item:hover .tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}

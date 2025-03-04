@@ -1,31 +1,97 @@
-/* Home Section */
 .hero-section {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: var(--light-text-color);
-    padding: 100px 0;
-    text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.floating-icons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.bubble {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.7;
+  animation: floatBubble linear infinite;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  pointer-events: auto;
+}
+
+.bubble:hover {
+  transform: scale(1.2);
+}
+
+@keyframes floatBubble {
+  0% {
+    transform: translateY(0);
   }
-  
-  .hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+  50% {
+    transform: translateY(-20px);
   }
-  
-  .hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+  100% {
+    transform: translateY(0);
   }
-  
-  .cta-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--secondary-color);
-    color: var(--light-text-color);
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .cta-button:hover {
-    background-color: #27ae60; /* Darker green */
-  }
+}
+
+.hero-content {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  max-width: 600px;
+  animation: fadeIn 1s ease-in-out;
+  margin: auto;
+}
+
+.hero-content h1{
+  font-size: 3rem;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background: #ff5733;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #e84118;
+  transform: scale(1.05);
+}
+
+.wave {
+  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;  /* Never stop waving :) */
+  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  
+  100% { transform: rotate( 0.0deg) }
+}
