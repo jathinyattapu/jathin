@@ -17,7 +17,7 @@ const skillsData = [
 ];
 
 const Skills = () => {
-  const [animated, setAnimated] = useState(false);
+  const [animated1, setAnimated] = useState(false);
 
   useEffect(() => {
     setTimeout(() => setAnimated(true), 500);
@@ -34,10 +34,10 @@ const Skills = () => {
             <span className="skill-name">
               <FontAwesomeIcon icon={skill.icon} className="skill-icon" /> {skill.name}
             </span>
-            <div className="progress-bar">
+            <div className="progress_bar">
               <div 
-                className="progress" 
-                style={{ width: animated ? `${skill.level}%` : "0%" }}
+                className="progress1" 
+                style={{ width: animated1 ? `${skill.level}%` : "0%" }}
               ></div>
             </div>
           </div>
