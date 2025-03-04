@@ -1,0 +1,23 @@
+.about-section {
+    padding: 80px 75px;
+    background-color: var(--light-text-color);
+  }
+  
+  .about-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+  }
+  
+  .about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
