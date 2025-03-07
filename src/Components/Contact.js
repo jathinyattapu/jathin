@@ -10,6 +10,15 @@ import { faLinkedin, faGithub, faFacebook, faXTwitter, faInstagram, faWhatsapp }
 import "./Contact.css";
 
 const Contact = () => {
+  const socialLinks = [
+    { href: "https://linkedin.com/in/jathin", icon: faLinkedin },
+    { href: "https://github.com/yattapujathin", icon: faGithub },
+    { href: "https://www.facebook.com/jathin.y/", icon: faFacebook },
+    { href: "https://twitter.com/jathinyattapu", icon: faXTwitter },
+    { href: "https://www.instagram.com/jathin_kumar_reddy_yattapu/", icon: faInstagram },
+    { href: "http://wa.me/917396144314", icon: faWhatsapp },
+  ];
+
   return (
     <section id="contact" className="contact-section">
       {/* <h2 className="section-title">Contact Me</h2>
@@ -33,50 +42,13 @@ const Contact = () => {
       <br></br>
       <h3 align="center">Wanna Follow me?</h3>
       <hr/>
-      <div className="social-links">
-        <a
-          href="https://linkedin.com/in/jathin"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faLinkedin} /> 
+       <div className="social-links">
+      {socialLinks.map((link, index) => (
+        <a id="social-links" key={index} href={link.href} target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={link.icon} />
         </a>
-        <a
-          href="https://github.com/yattapujathin"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faGithub} /> 
-        </a>
-        <a
-          href="https://www.facebook.com/jathin.y/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faFacebook} /> 
-        </a>
-        <a
-          href="https://twitter.com/jathinyattapu"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faXTwitter} /> 
-        </a>
-        <a
-          href="https://www.instagram.com/jathin_kumar_reddy_yattapu/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faInstagram} /> 
-        </a>
-        <a
-          href="http://wa.me/917396144314"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faWhatsapp} /> 
-        </a>
-      </div>
+      ))}
+    </div>
     </section>
   );
 };
