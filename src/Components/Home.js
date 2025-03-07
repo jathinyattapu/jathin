@@ -4,7 +4,7 @@ import { faReact, faNodeJs, faHtml5, faCss, faJs, faMicrosoft } from "@fortaweso
 import { faDatabase, faCode } from "@fortawesome/free-solid-svg-icons";
 import "./Home.css";
 
-const icons = [faReact, faNodeJs, faHtml5, faCss, faJs, faDatabase, faCode,faMicrosoft];
+const icons = [faReact, faNodeJs, faHtml5, faCss, faJs, faDatabase, faCode, faMicrosoft];
 
 const getRandomPosition = () => ({
   top: `${Math.random() * 100}vh`,
@@ -16,18 +16,29 @@ const Home = () => {
   const [bubbles, setBubbles] = useState(
     icons.map((icon, index) => ({ id: index, icon, ...getRandomPosition() }))
   );
+  const [wave, setWave] = useState(null);
+  const [isShaking, setIsShaking] = useState(false);
 
-  const popBubble = (id) => {
+  const popBubble = (id, event) => {
+    const { clientX, clientY } = event;
+    setWave({ top: clientY, left: clientX });
+    setIsShaking(true);
+
     setBubbles((prevBubbles) => [
       ...prevBubbles.filter((b) => b.id !== id),
       { id: Math.random(), icon: icons[Math.floor(Math.random() * icons.length)], ...getRandomPosition() }
     ]);
+
+    setTimeout(() => {
+      setWave(null);
+      setIsShaking(false);
+    }, 1500);
   };
 
   return (
     <section id="home" className="hero-section">
-      <div className="hero-content">
-        <h1>Hey! <br/> <span class="wave">👋</span></h1>
+      <div className={`hero-content ${isShaking ? "shake" : ""}`}>
+        <h1>Hey! <br /> <span className="wave">👋</span></h1>
         <h1>I'm Jathin</h1>
         <p>Full-Stack Developer | .NET & MERN Expert</p>
         <a href="#projects" className="cta-button">View My Work</a>
@@ -40,10 +51,12 @@ const Home = () => {
             icon={icon}
             className="bubble"
             style={{ top, left, animationDuration }}
-            onClick={() => popBubble(id)}
+            onClick={(e) => popBubble(id, e)}
           />
         ))}
       </div>
+
+      {wave && <div className="wave-effect" style={{ top: wave.top, left: wave.left }} />}
     </section>
   );
 };
