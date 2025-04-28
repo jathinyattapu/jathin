@@ -2,23 +2,15 @@ import React from "react";
 import "./Experience.css";
 
 const Experience = () => {
-  const experienceData = [
+  const experienceData = [    
     {
-      title: "Software Engineer",
-      company: "Perfex Technologies | Hyderabad",
-      duration: "Aug 2023 - Present",
-      description:
-        "Developed and maintained web applications using .NET and MERN stack. Collaborated with cross-functional teams to deliver high-quality software solutions.Built scalable backend systems using .NET Core and integrated front-end applications with React.js. Optimized database queries and improved application performance by 30%.",
-      logo: "https://media.licdn.com/dms/image/v2/C560BAQEAOMY1IT0VIg/company-logo_200_200/company-logo_200_200/0/1630648700947/perfex_technologies_logo?e=1749081600&v=beta&t=LhrdhkJHxHoGqWpqNNIPxC7KQp41URvi11bvGOE8EaQ", 
-    },
-    {
-      title: "IT Software Engineer",
+      title: "Engineer",
       company: "Shirdi Sai Electricals Ltd | Kadapa",
       duration: "Dec 2019 - Jul 2023",
       description:
         "Developed, maintained web applications and Collaborated with cross-functional teams to deliver high-quality software solutions.Built scalable backend systems",
       logo: "https://media.licdn.com/dms/image/v2/C560BAQHs471rMnnh1w/company-logo_200_200/company-logo_200_200/0/1630647941955/sseltd_logo?e=1749081600&v=beta&t=RnWe7NGuzobeeXUhOHuiNqkskAgBCwK267IiCiuKnBY", 
-    },
+    }
   ];
 
   return (
