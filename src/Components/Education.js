@@ -27,7 +27,7 @@ const educationData = [
 
 const Education = () => {
   return (
-    <div className="education-container" id="education">
+    <section id="education" className="education-container">
       <h2 className="education-title">
         <FontAwesomeIcon icon={faGraduationCap} className="education-icon" /> Education History
       </h2>
@@ -41,7 +41,7 @@ const Education = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

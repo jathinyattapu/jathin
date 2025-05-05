@@ -2,7 +2,7 @@
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
   color: white;
-  padding: 100px 0;
+  padding: 100px 15px;
   text-align: center;
   position: relative;
   overflow: hidden;
