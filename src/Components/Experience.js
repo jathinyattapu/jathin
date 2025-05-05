@@ -28,7 +28,7 @@ const Experience = () => {
         {experienceData.map((exp, index) => (
           <div key={index} className="experience-item">
             <div className="experience-header">
-              <img src={exp.logo} alt={`${exp.company} logo`} className="company-logo" id={`company-logo${index}`}/>
+              <img src={exp.logo} alt={`${exp.company} logo`} className="company-logo"/>
               <div>
                 <h2>{exp.title}</h2>
                 <p className="company">{exp.company}</p>
