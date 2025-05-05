@@ -32,11 +32,12 @@
 }
 
 .company-logo {
-  width: 75px;
-  height: 75px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--primary-color);
+  background-color: white;
 }
 
 .experience-header h3 {
