@@ -4,6 +4,14 @@ import "./Experience.css";
 const Experience = () => {
   const experienceData = [    
     {
+      title: "Software Engineer",
+      company: "W3Softech India Pvt Ltd | Hyderabad",
+      duration: "Jul 2023 - Present",
+      description:
+        "Developed and maintained web applications using .NET and MERN stack. Collaborated with cross-functional teams to deliver high-quality software solutions.Built scalable backend systems using .NET Core and integrated front-end applications with React.js. Optimized database queries and improved application performance by 30%.",
+      logo: "https://w3softech.com/assets/img/w3-logo.png", 
+    },
+    { 
       title: "Engineer",
       company: "Shirdi Sai Electricals Ltd | Kadapa",
       duration: "Dec 2019 - Jul 2023",
@@ -20,7 +28,7 @@ const Experience = () => {
         {experienceData.map((exp, index) => (
           <div key={index} className="experience-item">
             <div className="experience-header">
-              <img src={exp.logo} alt={`${exp.company} logo`} className="company-logo" />
+              <img src={exp.logo} alt={`${exp.company} logo`} className="company-logo" id={`company-logo${index}`}/>
               <div>
                 <h2>{exp.title}</h2>
                 <p className="company">{exp.company}</p>
